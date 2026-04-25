@@ -1,0 +1,13 @@
+@use "./typography" as t;
+@use "./colors" as c;
+
+:root {
+    --main-font: #{t.$font-main};
+
+    @each $name, $shades in c.$colors {
+        @each $shade, $value in $shades {
+            --color-#{$name}-#{$shade}: #{$value}
+        }
+    } 
+}
+

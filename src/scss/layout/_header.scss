@@ -1,0 +1,95 @@
+@use "../utils" as *;
+
+.header {
+    position: relative;
+    &__inner {
+        padding-block: 34px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include bp-up(md) {
+            flex-wrap: wrap;
+        }
+
+        @include bp-up(lg) {
+            flex-wrap: revert;
+        }
+    }
+
+    &__logo {
+        @include bp-up(lg) {
+            width: 18%;
+        }
+    }
+
+    &__nav {
+        display: none;
+        @include bp-up(md) {
+            width: 100%;
+            display: block;
+            order: 1;
+            text-align: center;
+        }
+
+        @include bp-up(lg) {
+            order: revert;
+            width: revert;
+        }
+    }
+
+    &__actions {
+        display: none;
+
+        @include bp-up(md) {
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            column-gap: 30px;
+        }
+
+        @include bp-up(lg) {
+            margin-right: 0;
+        }
+    }
+
+    &__cart {
+        position: relative;
+        width: 30px;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+            content: "0";
+            position: absolute;
+            top: -13px;
+            right: -15px;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-bg-accent-two);
+            color: var(--color-text-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+        }
+
+        & > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__contacts {
+        &-btn {
+            padding: 12px 14px 12px 14px;
+            font-size: 14px;
+            line-height: 2;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+}

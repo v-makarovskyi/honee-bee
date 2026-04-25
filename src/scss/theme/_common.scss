@@ -1,0 +1,8 @@
+@use "sass:meta";
+@use "../utils" as *;
+
+body {
+   background-color: var(--color-bg-main);
+   font: normal 400 1rem/1.5 #{$font-main};
+   text-rendering: auto;
+}

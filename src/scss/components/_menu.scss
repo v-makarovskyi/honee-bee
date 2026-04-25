@@ -1,0 +1,30 @@
+@use "../utils" as *;
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+
+  &__item {
+    
+
+    &--active {
+      color: var(--color-bg-accent-two);
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.25px;
+    line-height: 1.66;
+
+    @include bp-up(lg) {
+        padding: 16px;
+    }
+  }
+}
