@@ -42,7 +42,6 @@
         display: none;
 
         @include bp-up(md) {
-            margin-right: 30px;
             display: flex;
             align-items: center;
             column-gap: 30px;
