@@ -3,8 +3,13 @@
 .featured {
   position: relative;
   padding-inline: 15px;
+  padding-bottom: 70px;
   @include bp-up(sm) {
-    padding-block: 20px;
+    padding-top: 20px;
+  }
+
+  @include bp-up(md) {
+    padding-bottom: 20px;
   }
 
   &__bee {
@@ -120,6 +125,15 @@
         left: 16%;
       }
     }
+
+    &--two {
+      display: block;
+      bottom: 1%;
+      left: 9%;
+      @include bp-up(md) {
+        display: none;
+      }
+    }
   }
 
   &__wrapper {
@@ -161,7 +175,6 @@
 
   &__title {
     margin-bottom: 10px;
-    line-height: 0.9;
     @include bp-up(sm) {
       margin-bottom: 16px;
     }

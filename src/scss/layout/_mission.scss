@@ -1,0 +1,90 @@
+.mission {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__video {
+        position: relative;
+        margin-bottom: 10px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            width: 60px;
+            aspect-ratio: 1;
+            background-origin: border-box;
+            background-color: var(--color-text-white);
+            background-image: url("../../images/icons/play-arrow.svg");
+            background-repeat: no-repeat;
+            background-position: 60% center;
+            background-size: 25%;
+            border-radius: 50%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 7px;
+    }
+
+    &__description {
+        margin-bottom: 12px;
+    }
+
+    &__sidebar {
+        padding: 20px;
+        background-color: var(--color-text-white);
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+
+        &-list {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        &-item {
+            padding-block: 10px;
+            &:not(:last-child) {
+                border-bottom: 1px solid var(--color-bg-accent-two);
+            }
+
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+
+                & > time {
+                    font-size: 12px;
+                    color: var(--color-bg-accent-two);
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        &-btn {
+            width: max-content;
+            padding: 7px 12px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: var(--color-text-main);
+            color: var(--color-text-white);
+        }
+    }
+}

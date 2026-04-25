@@ -34,6 +34,37 @@
 .title-big {
   @extend .title;
   font-size: clamp(45px, 7.08vw, 136px);
+  line-height: 0.9;
+}
+
+.title-medium {
+  @extend .title;
+  font-size: 18px;
+  line-height: 1.25;
+  @include bp-up(sm) {
+    font-size: 24px;
+  }
+  @include bp-up(md) {
+    font-size: 28px;
+  }
+  @include bp-up(lg) {
+    font-size: 32px;
+  }
+  @include bp-up(xl) {
+    font-size: 36px;
+  }
+}
+
+.title-small {
+  @extend .title;
+  font-size: 16px;
+  line-height: 1.36;
+  @include bp-up(sm) {
+    font-size: 18px;
+  }
+  @include bp-up(md) {
+    font-size: 22px;
+  }
 }
 
 .section-description {
