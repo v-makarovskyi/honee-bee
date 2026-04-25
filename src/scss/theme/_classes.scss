@@ -1,4 +1,4 @@
-@use "../utils/" as u;
+@use "../utils/" as *;
 
 .container {
   $container-with: 1330px;
@@ -12,13 +12,35 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 0;
+  height: 0;
   background: color-mix(in srgb, var(--color-text-main), transparent 30%);
   opacity: 0;
   transition: opacity 0.7s ease-in-out;
+  z-index: 9;
 
   &--active {
+    width: 100vw;
+    height: 100vh;
     opacity: 1;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.title-big {
+  @extend .title;
+  font-size: clamp(45px, 7.08vw, 136px);
+}
+
+.section-description {
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--color-text-description);
+  @include bp-up(md) {
+    font-size: 18px;
   }
 }

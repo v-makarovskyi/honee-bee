@@ -1,0 +1,81 @@
+.featured {
+  position: relative;
+  padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+
+  &__bee {
+    position: absolute;
+    &--one {
+      top: 4%;
+      left: 9%;
+      width: 9%;
+    }
+    &--two {
+      right: 10%;
+      top: 30%;
+      width: 10%;
+    }
+
+    &--three {
+      display: none;
+    }
+    &--four {
+      display: none;
+    }
+    &--five {
+      display: none;
+    }
+  }
+
+  &__branch {
+    position: absolute;
+    &--one {
+      left: 0px;
+      bottom: 42%;
+      width: 25%;
+      z-index: 1;
+    }
+  }
+
+  &__info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  &__btn {
+    letter-spacing: 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  &__img {
+    &-container {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 104px;
+        right: 4px;
+        width: 29.7%;
+        height: 18.28%;
+        background: border-box transparent
+          url("../../images/featured/featured-signature.svg") center/100%
+          no-repeat;
+      }
+    }
+  }
+}
