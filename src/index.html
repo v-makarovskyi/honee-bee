@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.min.css" />
+    <title>Honee bee</title>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="mobile-menu">
+      <button class="mobile-menu__btn close-button button">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link mobile-menu__link--active" href="/"
+              >Home</a
+            >
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="/">Pages</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="/">Products</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="/">Blog</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="/">Portfolio</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link mobile-menu__link--contacts" href="/"
+              >Contacts</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <header class="header">
+      <div class="header__inner container">
+        <div class="header__logo logo">
+          <img
+            class="logo__img"
+            src="./images/logo.svg"
+            alt="header logo"
+            width="234"
+            height="48"
+            loading="lazy"
+          />
+        </div>
+        <nav class="header__nav">
+          <ul class="header__menu menu">
+            <li class="menu__item menu__item--active">
+              <a class="menu__link" href="/">Home</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="/">Pages</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="/">Products</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="/">Blog</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="/">Portfolio</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <a class="header__cart" href="#">
+            <img src="./images/icons/cart.svg" alt="cart image" width="21" height="18" loading="eager"/>
+          </a>
+          <button class="header__contacts-btn button">Contacts</button>
+        </div>
+        <button class="header__gamburger gamburger-button button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    <script src="./scripts/all.min.js"></script>
+  </body>
+</html>

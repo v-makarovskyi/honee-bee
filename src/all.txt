@@ -1,0 +1,10 @@
+function processScripts() {
+  return src('src/js/**/*.js')      // 1. Source your JS files
+    .pipe(babel({                   // 2. Transpile ES6+ to ES5
+      presets: ['@babel/env']
+    }))
+    .pipe(concat('all.js'))         // 3. Bundle files into all.js
+    .pipe(uglify())                 // 4. Minify the code
+    .pipe(rename({ extname: '.min.js' })) // 5. Rename to all.min.js
+    .pipe(dest('dist/js'));         // 6. Save to output directory
+}

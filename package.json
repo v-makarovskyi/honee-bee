@@ -1,0 +1,47 @@
+{
+  "name": "honee-bee",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "NODE_ENV=\"development\" gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "responsive-design",
+    "responsive",
+    "gulp",
+    "html",
+    "scss",
+    "css",
+    "sass"
+  ],
+  "author": "makarovskyi.v@gmail.com",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "browser-sync": "^3.0.4",
+    "chalk": "^5.6.2",
+    "del": "^8.0.1",
+    "gulp": "^5.0.1",
+    "gulp-autoprefixer": "^10.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^5.0.4",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-rename": "^2.1.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.99.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "last 2 versions"
+  ]
+}
