@@ -119,4 +119,5 @@ export function copyFonts() {
   return src(paths.fonts.src, { encoding: false }).pipe(dest(paths.fonts.dest));
 }
 
+export const build = series(clean, parallel(scripts, html, images, styles, copyFonts))
 export default parallel(serve);
