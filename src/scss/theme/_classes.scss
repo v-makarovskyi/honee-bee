@@ -40,7 +40,7 @@
   font-size: 16px;
   line-height: 1.66;
   color: var(--color-text-description);
-  @include bp-up(md) {
+  @include bp-up(sm) {
     font-size: 18px;
   }
 }

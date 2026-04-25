@@ -1,64 +1,190 @@
+@use "../utils" as *;
+
 .featured {
   position: relative;
   padding-inline: 15px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 30px;
+  @include bp-up(sm) {
+    padding-block: 20px;
+  }
 
   &__bee {
     position: absolute;
+    z-index: 1;
     &--one {
-      top: 4%;
+      top: 12%;
       left: 9%;
-      width: 9%;
+      width: 6%;
+
+      @include bp-up(lg) {
+        top: 3%;
+        left: 31%;
+        width: 6%;
+      }
     }
     &--two {
-      right: 10%;
-      top: 30%;
+      top: 25%;
+      right: 12%;
       width: 10%;
-    }
 
+      @include bp-up(lg) {
+        top: 25%;
+        right: 38%;
+        width: 10%;
+      }
+    }
     &--three {
       display: none;
+
+      @include bp-up(lg) {
+        display: block;
+        right: 1%;
+        top: 22%;
+        width: 10%;
+      }
     }
     &--four {
       display: none;
+
+      @include bp-up(xl) {
+        display: block;
+        bottom: 20%;
+        left: 25%;
+        width: 4%;
+      }
     }
     &--five {
       display: none;
+      @include bp-up(xl) {
+        display: block;
+        bottom: 37%;
+        left: 46%;
+        width: 8%;
+      }
     }
   }
 
   &__branch {
     position: absolute;
+    z-index: 1;
+
     &--one {
-      left: 0px;
       bottom: 42%;
-      width: 25%;
-      z-index: 1;
+      left: -1%;
+      width: 20%;
+      @include bp-up(lg) {
+        top: 13%;
+        left: -1%;
+        width: 12%;
+      }
+    }
+    &--two {
+      display: none;
+      @include bp-up(xl) {
+        display: block;
+        bottom: 3%;
+        left: 0%;
+        width: 6%;
+      }
+    }
+    &--three {
+      display: none;
+      @include bp-up(sm) {
+        display: block;
+        right: 0%;
+        bottom: 16%;
+        width: 15%;
+      }
+
+      @include bp-up(lg) {
+        display: block;
+        right: 0%;
+        top: 0%;
+        width: 9%;
+      }
+    }
+  }
+
+  &__line {
+    position: absolute;
+    z-index: 1;
+
+    &--one {
+      display: none;
+      @include bp-up(xl) {
+        display: block;
+        bottom: 10%;
+        left: 13%;
+      }
+      @include bp-up(xxl) {
+        bottom: 5%;
+        left: 16%;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+
+    @include bp-up(md) {
+      row-gap: 40px;
+    }
+
+    @include bp-up(lg) {
+      padding-inline: 20px;
+      flex-direction: row;
+      justify-content: center;
+      column-gap: 30px;
+    }
+
+    @include bp-up(xl) {
+      column-gap: 80px;
+    }
+
+    @include bp-up(xxl) {
+      column-gap: 136px;
     }
   }
 
   &__info {
-    position: relative;
+    max-width: 505px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include bp-up(lg) {
+      align-items: start;
+    }
   }
 
   &__title {
     margin-bottom: 10px;
+    line-height: 0.9;
+    @include bp-up(sm) {
+      margin-bottom: 16px;
+    }
   }
 
   &__description {
     margin-bottom: 25px;
     text-align: center;
+
+    @include bp-up(lg) {
+      text-align: left;
+    }
   }
 
   &__btn {
-    letter-spacing: 0;
     padding: 10px;
+    letter-spacing: 0;
     border-radius: 5px;
+    font-weight: 700;
+
+    @include bp-up(sm) {
+      padding: 10px 14px;
+    }
   }
 
   &__img {
@@ -67,14 +193,22 @@
 
       &::after {
         content: "";
+        width: 29.64%;
+        height: 18.3%;
         position: absolute;
-        top: 104px;
-        right: 4px;
-        width: 29.7%;
-        height: 18.28%;
+        top: 33%;
+        right: 10%;
         background: border-box transparent
-          url("../../images/featured/featured-signature.svg") center/100%
+          url("../../images/featured/featured-signature.svg") center / cover
           no-repeat;
+      }
+
+      @include bp-up(sm) {
+        width: 75%;
+      }
+
+      @include bp-up(lg) {
+        width: revert;
       }
     }
   }
