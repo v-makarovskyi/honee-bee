@@ -3,30 +3,29 @@
 
 .mission {
   --component-padding-top: 20px;
-  --component-padding-inline: 16px;
   --sidebar-inner-padding: 20px 20px 30px;
 
   @include bp-up(sm) {
     --component-padding-top: 25px;
-    --component-padding-inline: 40px;
     --sidebar-inner-padding: 30px 35px 40px;
   }
 
   @include bp-up(md) {
     --component-padding-top: 35px;
-    --component-padding-inline: 90px;
     --sidebar-inner-padding: 30px 45px 40px;
   }
 
   @include bp-up(lg) {
     --component-padding-top: 0px;
-    --component-padding-inline: 0px;
-    /*  --sidebar-inner-padding: 40px 40px 75px; */
     --sidebar-inner-padding: 20px 40px 30px;
   }
 
   padding-top: 40px;
   padding-bottom: 40px;
+
+  @include bp-up(lg) {
+    padding-inline: 30px;
+  }
 
   &__inner {
     display: flex;
@@ -84,7 +83,6 @@
   &__info {
     max-width: 790px;
     padding-top: var(--component-padding-top);
-    padding-inline: var(--component-padding-inline);
   }
 
   &__title {
@@ -113,7 +111,6 @@
 
   &__sidebar {
     padding-top: var(--component-padding-top);
-    padding-inline: var(--component-padding-inline);
 
     background-color: var(--color-text-white);
     background-clip: content-box;

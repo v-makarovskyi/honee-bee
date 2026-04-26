@@ -8,6 +8,19 @@
   max-width: calc($container-with - $container-padding-x * 2);
 }
 
+.pi {
+  padding-inline: 16px;
+  @include bp-up(sm) {
+    padding-inline: 40px;
+  }
+  @include bp-up(md) {
+    padding-inline: 90px;
+  }
+  @include bp-up(lg) {
+    padding-inline: 0;
+  }
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -69,8 +82,29 @@
   @include bp-up(lg) {
     font-size: 20px;
   }
-  @include bp-up(lg) {
+  @include bp-up(xl) {
     font-size: 22px;
+  }
+}
+
+.section-title {
+  @extend .title;
+  font-size: 24px;
+  line-height: 1.15;
+  @include bp-up(sm) {
+    font-size: 28px;
+  }
+  @include bp-up(md) {
+    font-size: 34px;
+  }
+  @include bp-up(lg) {
+    font-size: 40px;
+  }
+  @include bp-up(xl) {
+    font-size: 44px;
+  }
+  @include bp-up(xxl) {
+    font-size: 48px;
   }
 }
 

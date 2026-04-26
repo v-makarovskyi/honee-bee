@@ -1,0 +1,86 @@
+@use "../utils" as *;
+
+.card {
+  --card--content--padding: 20px 20px 30px;
+
+  @include bp-up(sm) {
+    --card--content--padding: 30px 10px 40px;
+  }
+
+  padding: var(--card--content--padding);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  row-gap: 10px;
+  box-shadow: 0px 7px 13px 5px rgba(162, 157, 157, 0.41);
+  border-radius: 10px;
+
+  &__image {
+    width: 60%;
+    height: 45%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 0% 99%;
+    }
+  }
+
+  &__title {
+    line-height: 1.23;
+    font-size: 18px;
+    @include bp-up(sm) {
+      font-size: 20px;
+    }
+    @include bp-up(md) {
+      font-size: 22px;
+    }
+    @include bp-up(xl) {
+      font-size: 26px;
+    }
+  }
+
+  &__price {
+    font-size: 16px;
+    line-height: 1.36;
+    font-weight: 700;
+    color: var(--color-bg-accent-two);
+
+    @include bp-up(sm) {
+      font-size: 18px;
+    }
+    @include bp-up(md) {
+      font-size: 20px;
+    }
+    @include bp-up(xl) {
+      font-size: 22px;
+    }
+  }
+
+  &__description {
+    max-width: 357px;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+    @include bp-up(md) {
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    width: max-content;
+    padding: 8px 14px 9px 14px;
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    letter-spacing: 0;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 5px;
+
+    & img {
+       filter: invert(1); 
+    }
+  }
+}

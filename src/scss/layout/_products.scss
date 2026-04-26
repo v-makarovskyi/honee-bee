@@ -1,0 +1,86 @@
+@use "sass:selector";
+@use "../utils" as *;
+
+
+.products {
+    @at-root #{selector.nest(&, '.pi')} {
+        @include bp-up(lg) {
+            padding-inline: 30px;
+        }
+    }
+
+  &__wrapper {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-rows: auto repeat(3, auto);
+    row-gap: 35px;
+    justify-items: center;
+
+    @include bp-up(sm) {
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+      column-gap: 30px;
+      grid-template-rows: auto;
+    }
+
+    @include bp-up(md) {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    @include bp-up(xl) {
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    }
+  }
+  &__body {
+    display: contents;
+  }
+
+  &__header {
+    grid-column: 1 / -1;
+    padding-inline: 16px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    max-width: 618px;
+  }
+
+  &__card {
+  }
+
+  &__bee {
+    position: absolute;
+    &--one {
+      top: 16%;
+      left: 16%;
+      width: 10%;
+    }
+    &--two {
+      top: 35%;
+      right: 12%;
+      width: 8%;
+    }
+    &--three {
+      top: 53%;
+      left: 16%;
+      width: 9%;
+    }
+    &--four {
+      top: 56%;
+      right: 12%;
+      width: 12%;
+    }
+    &--five {
+      bottom: 13%;
+      right: 12%;
+      width: 8%;
+    }
+  }
+}
