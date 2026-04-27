@@ -147,8 +147,8 @@
         </div>
       </section>
 
-      <section class="mission">
-        <div class="mission__inner container">
+      <section class="mission container">
+        <div class="mission__inner">
           <div class="mission__content">
             <div class="mission__video">
               <video
@@ -235,16 +235,15 @@
 
       <section class="products container">
         <div class="products__wrapper pi">
-           <header class="products__header">
-          <h2 class="products__title section-title">Our products</h2>
-          <div class="products__description section-description">
-            <p>
-              Check out our online shop for cute bee-themed apparel, unique bee
-              suits, educational tools, gift certificates and more.
-            </p>
-          </div>
-        </header>
-        <div class="products__body">
+          <header class="products__header">
+            <h2 class="products__title section-title">Our products</h2>
+            <div class="products__description section-description">
+              <p>
+                Check out our online shop for cute bee-themed apparel, unique
+                bee suits, educational tools, gift certificates and more.
+              </p>
+            </div>
+          </header>
           <div class="products__bee products__bee--one">
             <img src="./images/icons/bee/bee-1.svg" alt="bee one" />
           </div>
@@ -303,7 +302,9 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt.
             </p>
-            <button class="products__btn card__btn button">
+            <button
+              class="produ @include bp-up(sm) { grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); column-gap: 30px; grid-template-rows: auto; } @include bp-up(md) { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); } @include bp-up(xl) { grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); }cts__btn card__btn button"
+            >
               <img
                 src="./images/icons/cart.svg"
                 alt="button to cart"
@@ -342,8 +343,6 @@
             </button>
           </div>
         </div>
-        </div>
-       
       </section>
     </main>
     <script src="./scripts/all.min.js"></script>

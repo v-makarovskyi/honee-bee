@@ -16,26 +16,21 @@
     display: grid;
     grid-auto-columns: 1fr;
     grid-template-rows: auto repeat(3, auto);
-    row-gap: 35px;
+    row-gap: 24px;
     justify-items: center;
 
-    @include bp-up(sm) {
-      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+   @include bp-up(sm) {
+      grid-template-columns: repeat(2, 1fr);
       column-gap: 30px;
       grid-template-rows: auto;
     }
 
-    @include bp-up(md) {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   @include bp-up(lg) {
+      grid-template-columns: repeat(3, 1fr);
     }
+    
+  }
 
-    @include bp-up(xl) {
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    }
-  }
-  &__body {
-    display: contents;
-  }
 
   &__header {
     grid-column: 1 / -1;
@@ -53,6 +48,18 @@
   }
 
   &__card {
+    width: 70%;
+
+    @include bp-up(sm) {
+      width: 100%;
+    }
+
+    @include bp-up(md) {
+      width: 70%;
+    }
+    @include bp-up(md) {
+      width: 95%;
+    }
   }
 
   &__bee {
