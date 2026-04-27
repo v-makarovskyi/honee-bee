@@ -39,6 +39,7 @@
     }
 
     @include bp-up(xxl) {
+      padding-inline: 0;
       column-gap: 78px;
     }
   }

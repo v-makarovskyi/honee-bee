@@ -7,6 +7,10 @@
         @include bp-up(lg) {
             padding-inline: 30px;
         }
+
+        @include bp-up(xxl) {
+          padding-inline: 0;
+        }
     }
 
   &__wrapper {
@@ -34,7 +38,6 @@
 
   &__header {
     grid-column: 1 / -1;
-    padding-inline: 16px;
     margin-bottom: 24px;
     text-align: center;
   }

@@ -1,0 +1,149 @@
+@use "sass:selector";
+@use "../utils" as *;
+
+.quote {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 32px;
+  font-size: 14px;
+
+  @at-root #{selector.nest(&, ".pi")} {
+    @include bp-up(md) {
+      padding-inline: 40px;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    top: -11%;
+    left: 3%;
+
+    @include bp-up(sm) {
+      left: 11%;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include bp-up(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__image {
+    position: relative;
+    @include bp-up(md) {
+      width: 100%;
+      max-width: 312px;
+      align-self: stretch;
+      & > img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &::after {
+      display: inline-block;
+      content: "";
+      width: 71px;
+      aspect-ratio: 1;
+      background-color: color-mix(
+        in srgb,
+        var(--color-bg-accent-two),
+        var(--color-bg-accent-one) 30%
+      );
+      background-image: url("../../images/quote/num.svg");
+      background-repeat: no-repeat;
+      background-size: 66% 37%;
+      background-position: center;
+      border-radius: 50%;
+      position: absolute;
+      top: -6%;
+      right: -4%;
+    }
+  }
+
+  &__blockquote {
+    &-wrapper {
+      max-width: 850px;
+      text-align: center;
+    }
+    &-info {
+      font-size: 16px;
+      margin-bottom: 10px;
+      font-style: italic;
+      line-height: 1.46;
+
+      @include bp-up(sm) {
+        font-size: 18px;
+      }
+      @include bp-up(md) {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+      }
+
+      @include bp-up(lg) {
+        font-size: 20px;
+      }
+
+      @include bp-up(xl) {
+        font-size: 22px;
+      }
+      @include bp-up(xxl) {
+        font-size: 26px;
+      }
+
+      &::before {
+        flex-shrink: 0;
+        content: "";
+        display: inline-block;
+        width: 2.8em;
+        aspect-ratio: 1;
+        background-color: #d3a863;
+        mask-image: url("../../images/quote/quote.svg");
+        mask-size: cover;
+        mask-repeat: no-repeat;
+      }
+    }
+    &-signature {
+      & > span {
+        font-weight: 700;
+        @include bp-up(sm) {
+          font-size: 14px;
+        }
+        @include bp-up(sm) {
+          font-size: 16px;
+        }
+
+        @include bp-up(lg) {
+          font-size: 18px;
+        }
+        @include bp-up(xxl) {
+          font-size: 22px;
+        }
+      }
+
+      & > cite {
+        display: inline-block;
+        margin-left: 5px;
+        font-size: 14px;
+        &::before {
+          margin-right: 3px;
+          display: inline-block;
+          position: relative;
+          top: -3px;
+          left: 0;
+          content: "";
+          width: 15px;
+          height: 1px;
+          background-color: var(--color-text-main);
+        }
+      }
+    }
+  }
+}
