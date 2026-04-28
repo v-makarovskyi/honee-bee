@@ -14,23 +14,19 @@
 }
 
 .gamburger-button {
-  will-change: transform; 
-  pointer-events: auto;
   position: relative;
-  padding: 16px 24px 16px;
+  padding: 12px 12px 4px;
   background-color: transparent;
-  transition: rotate .4s ease-in-out;
 
   @include bp-up(md) {
     display: none;
   }
 
   & > span:nth-of-type(2n + 1) {
-    transition: rotate 1s ease-in-out;
+    transition: rotate 0.3s ease-in-out;
   }
 
   & > span {
-    pointer-events: none;
     margin-bottom: 5px;
     display: block;
     width: 30px;
@@ -41,8 +37,8 @@
 
   &:hover > span:nth-of-type(1) {
     position: absolute;
-    top: 28px;
-    left: 24px;
+    top: 24px;
+    left: 12px;
     rotate: 135deg;
   }
 
@@ -52,8 +48,8 @@
 
   &:hover > span:nth-of-type(3) {
     position: absolute;
-    top: 28px;
-    right: 22px;
+    top: 24px;
+    right: 12px;
     rotate: -135deg;
   }
 }
