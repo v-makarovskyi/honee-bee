@@ -10,7 +10,7 @@ gamburgerBtn.addEventListener("click", (e) => {
   overlay.classList.add("overlay--active");
 });
 
-closeBtn.addEventListener("click, (e) => {
+closeBtn.addEventListener("click", (e) => {
   e.preventDefault()
   mobileMenu.classList.remove("mobile-menu--open");
   overlay.classList.remove("overlay--active");
