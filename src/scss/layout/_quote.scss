@@ -7,12 +7,6 @@
   padding-bottom: 32px;
   font-size: 14px;
 
-  @at-root #{selector.nest(&, ".pi")} {
-    @include bp-up(md) {
-      padding-inline: 40px;
-    }
-  }
-
   &__line {
     position: absolute;
     top: -11%;

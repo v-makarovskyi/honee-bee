@@ -3,16 +3,6 @@
 
 
 .products {
-    @at-root #{selector.nest(&, '.pi')} {
-        @include bp-up(lg) {
-            padding-inline: 30px;
-        }
-
-        @include bp-up(xxl) {
-          padding-inline: 0;
-        }
-    }
-
   &__wrapper {
     position: relative;
     padding-top: 20px;

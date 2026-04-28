@@ -8,18 +8,6 @@
   max-width: calc($container-with - $container-padding-x * 2);
 }
 
-.pi {
-  padding-inline: 16px;
-  @include bp-up(sm) {
-    padding-inline: 40px;
-  }
-  @include bp-up(md) {
-    padding-inline: 90px;
-  }
-  @include bp-up(lg) {
-    padding-inline: 0;
-  }
-}
 
 .overlay {
   position: fixed;
@@ -115,4 +103,21 @@
   @include bp-up(sm) {
     font-size: 18px;
   }
+}
+
+.item-description {
+  font-size: 14px;
+  @include bp-up(sm) {
+    font-size: 16px;
+  }
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
 }

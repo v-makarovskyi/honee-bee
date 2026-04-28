@@ -29,7 +29,6 @@
     row-gap: 30px;
 
     @include bp-up(lg) {
-      padding-inline: 30px;
       flex-direction: row;
       column-gap: 40px;
     }
@@ -150,13 +149,6 @@
         font-size: 12px;
         color: var(--color-bg-accent-two);
         text-transform: uppercase;
-      }
-
-      &-description {
-        font-size: 14px;
-        @include bp-up(sm) {
-          font-size: 16px;
-        }
       }
     }
 

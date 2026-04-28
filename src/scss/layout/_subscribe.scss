@@ -1,0 +1,139 @@
+@use "sass:selector";
+@use "../utils" as *;
+
+.subscribe {
+  padding-top: 60px;
+  padding-bottom: 40px;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @include bp-up(md) {
+      flex-direction: row;
+      column-gap: 20px;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    top: -11%;
+    left: 3%;
+
+    @include bp-up(sm) {
+      left: 11%;
+    }
+  }
+
+  &__image {
+    width: 65%;
+    margin-inline: auto;
+
+    @include bp-up(md) {
+      width: auto;
+      & > img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__form {
+    align-self: center;
+    &-header {
+      @include bp-up(lg) {
+        margin-bottom: 20px;
+      }
+
+      @include bp-up(xl) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__title {
+    max-width: 427px;
+    margin-bottom: 14px;
+    margin-inline: auto;
+    text-align: center;
+
+    @include bp-up(md) {
+        text-align: left;
+    }
+
+    @include bp-up(lg) {
+        margin: 0;
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+    margin-inline: auto;
+    max-width: 563px;
+    font-size: 12px;
+    text-align: center;
+
+    @include bp-up(md) {
+      font-size: 14px;
+      text-align: left;
+    }
+
+    @include bp-up(lg) {
+      font-size: 16px;
+    }
+  }
+
+  &__input {
+    &-block {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      @include bp-up(lg) {
+        flex-direction: row;
+        column-gap: 7px;
+      }
+      & > input {
+        padding-left: 15px;
+        width: 100%;
+        height: 48px;
+        border: 1px solid var(--color-bg-accent-two);
+        border-radius: 7px;
+        @include bp-up(md) {
+          height: 62px;
+        }
+        &::placeholder {
+          font-size: 14px;
+          color: var(--color-text-header);
+        }
+        &:focus {
+          outline: none;
+          border: 2px solid var(--color-bg-accent-two);
+          color: var(--color-bg-accent-two);
+        }
+      }
+    }
+  }
+
+  &__button {
+    align-self: center;
+    width: max-content;
+    padding-block: 7px;
+    padding-inline: 12px;
+    font-size: 14px;
+    letter-spacing: 0;
+    font-weight: 700;
+    border-radius: 7px;
+
+    @include bp-up(md) {
+      font-size: 16px;
+      padding-block: 10px;
+      padding-inline: 15px;
+    }
+
+    @include bp-up(lg) {
+      padding-block: 17px;
+    }
+  }
+}
