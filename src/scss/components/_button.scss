@@ -14,6 +14,7 @@
 }
 
 .gamburger-button {
+  will-change: transform; 
   pointer-events: auto;
   position: relative;
   padding: 16px 24px 16px;
