@@ -4,13 +4,13 @@ const gamburgerBtn = document.querySelector(".gamburger-button");
 const closeBtn = document.querySelector(".close-button");
 
 
-gamburgerBtn.addEventListener("pointerdown", (e) => {
+gamburgerBtn.addEventListener("click", (e) => {
   e.preventDefault()
   mobileMenu.classList.add("mobile-menu--open");
   overlay.classList.add("overlay--active");
 });
 
-closeBtn.addEventListener("pointerdown", (e) => {
+closeBtn.addEventListener("click, (e) => {
   e.preventDefault()
   mobileMenu.classList.remove("mobile-menu--open");
   overlay.classList.remove("overlay--active");
