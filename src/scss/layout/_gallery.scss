@@ -1,6 +1,7 @@
 @use "../utils/" as *;
 
 .gallery {
+    padding-top: 36px;
     padding-bottom: 40px;
     &__inner {
         display: grid;

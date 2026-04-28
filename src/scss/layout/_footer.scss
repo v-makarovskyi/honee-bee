@@ -1,0 +1,78 @@
+@use "../utils" as *;
+
+.footer {
+  padding: 60px 0px 30px;
+
+  &__inner {
+    width: min-content;
+    display: grid;
+    grid-template:
+      "i f t" max-content
+      "c c c" max-content
+      "b b b" max-content
+      / auto auto auto;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__social {
+    position: relative;
+    margin-bottom: 18px;
+    margin-inline: 28px;
+    @include bp-up(sm) {
+      margin-bottom: 24px;
+    }
+
+    color: var(--color-text-white);
+    z-index: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -42%;
+      left: -50%;
+      width: 40px;
+      aspect-ratio: 1;
+      background-color: var(--color-bg-accent-three);
+      z-index: -1;
+      border-radius: 50%;
+
+      @include bp-up(sm) {
+        top: -31%;
+        left: -35%;
+        width: 60px;
+      }
+    }
+
+    & svg {
+      fill: currentColor;
+      width: 20px;
+      height: 20px;
+      @include bp-up(sm) {
+        width: auto;
+        height: auto;
+      }
+    }
+    &--instagram {
+      grid-area: i;
+    }
+    &--facebook {
+      grid-area: f;
+    }
+    &--twitter {
+      grid-area: t;
+    }
+  }
+
+  &__image {
+    grid-area: c;
+    margin-bottom: 10px;
+  }
+
+  &__copyright {
+    grid-area: b;
+    font-size: 12px;
+    line-height: 2.5;
+  }
+}
