@@ -17,13 +17,14 @@
   position: relative;
   padding: 16px 24px 16px;
   background-color: transparent;
+  transition: rotate .4s ease-in-out;
 
   @include bp-up(md) {
     display: none;
   }
 
   & > span:nth-of-type(2n + 1) {
-    transition: rotate 0.3s ease-in-out;
+    transition: rotate 1s ease-in-out;
   }
 
   & > span {

@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   row-gap: 90px;
-  transition: right .4s ease-in-out;
+  transition: right .4s 1s ease-in-out;
   background: border-box var(--color-bg-accent-three) url("../../images/mm/mobile-bg.jpg") center / cover no-repeat;
 
   &--open {
