@@ -23,7 +23,7 @@
   }
 
   & > span:nth-of-type(2n + 1) {
-    transition: rotate .3s ease-in-out;
+    transition: rotate 0.3s ease-in-out;
   }
 
   & > span {
@@ -55,8 +55,10 @@
 }
 
 .close-button {
+  width: 50px;
+  aspect-ratio: 1;
   position: relative;
-  padding: 20px;
+  padding: 0px;
   background-color: transparent;
 
   & > span {
@@ -65,18 +67,22 @@
     display: block;
     width: 40px;
     height: 5px;
-    background-color: var(--color-bg-accent-one);
+    background-color: var(--color-bg-accent-two);
+    transition: rotate 5s ease-in-out;
   }
 
   & > span:first-of-type {
-    top: 15px;
-    left: -1px;
+    top: 23px;
+    left: 5px;
     rotate: 45deg;
   }
 
   & > span:last-of-type {
-    top: 15px;
-    right: 1px;
+    top: 23px;
+    right: 5px;
     rotate: -45deg;
   }
+
 }
+
+/* .63turn */

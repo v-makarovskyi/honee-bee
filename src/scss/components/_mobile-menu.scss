@@ -12,41 +12,23 @@
   flex-direction: column;
   align-items: center;
   row-gap: 90px;
-  transition: right .5s .3s ease-in-out;
-  background: border-box var(--color-bg-accent-three) url("../../images/mm/mobile-bg.jpg") center / cover no-repeat;
-/* 
-  &--open {
-    right: 0;
-  } */
+  transition: right 0.5s 0.3s ease-in-out;
+  background: border-box var(--color-bg-accent-three)
+    url("../../images/mm/mobile-bg.jpg") center / cover no-repeat;
+  font-size: 34px;
+  font-weight: 700;
+
   @include unify-parent(".mobile-menu--open") {
     right: 0;
   }
 
   &__btn {
-   align-self: flex-end;
+    align-self: flex-end;
   }
 
   &__item {
-    position: relative;
-    overflow: hidden;
     &:not(:last-child) {
       margin-bottom: 25px;
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: var(--color-bg-accent-one);
-        bottom: 0;
-        left: 0;
-        transform: scaleX(0);
-        transition: all 1s ease-in-out;
-    }
-
-    &:hover::after {
-        transform: scaleX(1);
     }
   }
 }

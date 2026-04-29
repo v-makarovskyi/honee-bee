@@ -3,7 +3,6 @@ const overlay = document.querySelector(".overlay");
 const gamburgerBtn = document.querySelector(".gamburger-button");
 const closeBtn = document.querySelector(".close-button");
 
-//document.addEventListener("touchstart", function(){}, true);
 
 gamburgerBtn.addEventListener("click", function(e) {
   this.classList.add("gamburger-button--active")
