@@ -3,16 +3,16 @@ const overlay = document.querySelector(".overlay");
 const gamburgerBtn = document.querySelector(".gamburger-button");
 const closeBtn = document.querySelector(".close-button");
 
-document.addEventListener("touchstart", function(){}, true);
+//document.addEventListener("touchstart", function(){}, true);
 
-gamburgerBtn.addEventListener("click", (e) => {
-  e.preventDefault()
+gamburgerBtn.addEventListener("click", function(e) {
+  this.classList.add("gamburger-button--active")
   mobileMenu.classList.add("mobile-menu--open");
   overlay.classList.add("overlay--active");
 });
 
-closeBtn.addEventListener("click", (e) => {
-  e.preventDefault()
+closeBtn.addEventListener("click", function(e) {
+  gamburgerBtn.classList.remove("gamburger-button--active")
   mobileMenu.classList.remove("mobile-menu--open");
   overlay.classList.remove("overlay--active");
 });

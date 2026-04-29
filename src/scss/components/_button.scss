@@ -23,7 +23,7 @@
   }
 
   & > span:nth-of-type(2n + 1) {
-    transition: rotate 0.3s ease-in-out;
+    transition: rotate .3s ease-in-out;
   }
 
   & > span {
@@ -35,48 +35,48 @@
     rotate: 0deg;
   }
 
-  &:hover > span:nth-of-type(1) {
-    position: absolute;
-    top: 24px;
-    left: 12px;
-    rotate: 135deg;
-  }
-
-  &:hover > span:nth-of-type(2) {
-    visibility: hidden;
-  }
-
-  &:hover > span:nth-of-type(3) {
-    position: absolute;
-    top: 24px;
-    right: 12px;
-    rotate: -135deg;
+  @include unify-parent(".gamburger-button--active") {
+    & > span:nth-of-type(1) {
+      position: absolute;
+      top: 24px;
+      left: 12px;
+      rotate: 135deg;
+    }
+    & > span:nth-of-type(2) {
+      visibility: hidden;
+    }
+    & > span:nth-of-type(3) {
+      position: absolute;
+      top: 24px;
+      right: 12px;
+      rotate: -135deg;
+    }
   }
 }
 
 .close-button {
-    position: relative;
-    padding: 20px;
-    background-color: transparent;
+  position: relative;
+  padding: 20px;
+  background-color: transparent;
 
-    & > span {
-      position: absolute;
-      margin-bottom: 7px;
-      display: block;
-      width: 40px;
-      height: 5px;
-      background-color: var(--color-bg-accent-one);
-    }
+  & > span {
+    position: absolute;
+    margin-bottom: 7px;
+    display: block;
+    width: 40px;
+    height: 5px;
+    background-color: var(--color-bg-accent-one);
+  }
 
-    & > span:first-of-type {
-      top: 15px;
-      left: -1px;
-      rotate: 45deg;
-    }
+  & > span:first-of-type {
+    top: 15px;
+    left: -1px;
+    rotate: 45deg;
+  }
 
-    & > span:last-of-type {
-      top: 15px;
-      right: 1px;
-      rotate: -45deg;
-    }
+  & > span:last-of-type {
+    top: 15px;
+    right: 1px;
+    rotate: -45deg;
+  }
 }

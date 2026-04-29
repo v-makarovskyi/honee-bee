@@ -1,3 +1,5 @@
+@use "../utils" as *;
+
 .mobile-menu {
   padding: 50px 20px 30px;
   position: fixed;
@@ -10,10 +12,13 @@
   flex-direction: column;
   align-items: center;
   row-gap: 90px;
-  transition: right .4s ease-in-out;
+  transition: right .5s .3s ease-in-out;
   background: border-box var(--color-bg-accent-three) url("../../images/mm/mobile-bg.jpg") center / cover no-repeat;
-
+/* 
   &--open {
+    right: 0;
+  } */
+  @include unify-parent(".mobile-menu--open") {
     right: 0;
   }
 
