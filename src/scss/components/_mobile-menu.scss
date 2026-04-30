@@ -7,16 +7,16 @@
   right: -75%;
   width: 70%;
   height: 100%;
-  z-index: 99;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 90px;
   transition: right 0.5s 0.3s ease-in-out;
-  background: border-box var(--color-bg-accent-three)
+  background: border-box transparent
     url("../../images/mm/mobile-bg.jpg") center / cover no-repeat;
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 400;
 
   @include unify-parent(".mobile-menu--open") {
     right: 0;

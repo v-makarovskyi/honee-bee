@@ -1,6 +1,6 @@
 import browserSync from "browser-sync";
 import { src, dest, parallel, series, watch } from "gulp";
-import babel from "gulp-babel"
+import babel from "gulp-babel";
 import terser from "gulp-terser";
 import htmlmin from "gulp-htmlmin";
 import * as dartSass from "sass";
@@ -12,6 +12,7 @@ import concat from "gulp-concat";
 import rename from "gulp-rename";
 import sourcemaps from "gulp-sourcemaps";
 import changed from "gulp-changed";
+import imagemin, {mozjpeg, optipng, svgo } from "gulp-imagemin";
 import { deleteAsync } from "del";
 import chalk from "chalk";
 
@@ -19,9 +20,7 @@ const server = browserSync.create("honee-bee");
 const sass = gulpSass(dartSass);
 const PORT = 9000;
 
-console.log(process.env.NODE_ENV);
 const isProd = process.env.NODE_ENV === "production";
-console.log("isProd", isProd);
 
 const paths = {
   scripts: {
@@ -76,16 +75,18 @@ export function clean() {
 
 export function scripts() {
   return src(paths.scripts.src)
-  .pipe(sourcemaps.init())
-  .pipe(babel({
-    presets: ["@babel/env"]
-  }))
-  .pipe(concat("all.js"))
-  .pipe(terser())
-  .pipe(rename({extname: ".min.js"}))
-  .pipe(sourcemaps.write("."))
-  .pipe(dest(paths.scripts.dest))
-  .pipe(server.stream())
+    .pipe(sourcemaps.init())
+    .pipe(
+      babel({
+        presets: ["@babel/env"],
+      })
+    )
+    .pipe(concat("all.js"))
+    .pipe(terser())
+    .pipe(rename({ extname: ".min.js" }))
+    .pipe(sourcemaps.write("."))
+    .pipe(dest(paths.scripts.dest))
+    .pipe(server.stream());
 }
 
 export function html() {
@@ -109,8 +110,22 @@ export function styles() {
 }
 
 export function images() {
-  return src(paths.images.src, {encoding: false})
+  return src(paths.images.src, { encoding: false })
     .pipe(changed(paths.images.dest))
+    .pipe(
+      gulpIf(
+        isProd,
+        imagemin([
+          mozjpeg({ quality: 60, progressive: true }),
+          optipng({
+            optimizationLevel: 5,
+          }),
+          svgo({
+            plugins: [{ name: "removeViewBox", active: false }],
+          }),
+        ])
+      )
+    )
     .pipe(dest(paths.images.dest))
     .pipe(server.stream());
 }
@@ -119,5 +134,8 @@ export function copyFonts() {
   return src(paths.fonts.src, { encoding: false }).pipe(dest(paths.fonts.dest));
 }
 
-export const build = series(clean, parallel(scripts, html, images, styles, copyFonts))
+export const build = series(
+  clean,
+  parallel(scripts, html, images, styles, copyFonts)
+);
 export default parallel(serve);

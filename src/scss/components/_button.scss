@@ -14,6 +14,11 @@
 }
 
 .gamburger-button {
+  box-sizing: content-box;
+  width: 24px;
+  height: 21px;
+  padding: 8px;
+  z-index: 10;
   position: relative;
   padding: 12px 12px 4px;
   background-color: transparent;
@@ -29,8 +34,8 @@
   & > span {
     margin-bottom: 5px;
     display: block;
-    width: 30px;
-    height: 5px;
+    width: 24px;
+    height: 3px;
     background-color: var(--color-text-main);
     rotate: 0deg;
   }
@@ -38,8 +43,8 @@
   @include unify-parent(".gamburger-button--active") {
     & > span:nth-of-type(1) {
       position: absolute;
-      top: 24px;
-      left: 12px;
+      top: 17px;
+      left: 9px;
       rotate: 135deg;
     }
     & > span:nth-of-type(2) {
@@ -47,41 +52,11 @@
     }
     & > span:nth-of-type(3) {
       position: absolute;
-      top: 24px;
-      right: 12px;
+      top: 17px;
+      right: 7px;
       rotate: -135deg;
     }
   }
 }
 
-.close-button {
-  width: 50px;
-  aspect-ratio: 1;
-  position: relative;
-  padding: 0px;
-  background-color: transparent;
-
-  & > span {
-    position: absolute;
-    margin-bottom: 7px;
-    display: block;
-    width: 40px;
-    height: 5px;
-    background-color: var(--color-bg-accent-two);
-    transition: rotate 5s ease-in-out;
-  }
-
-  & > span:first-of-type {
-    top: 23px;
-    left: 5px;
-    rotate: 45deg;
-  }
-
-  & > span:last-of-type {
-    top: 23px;
-    right: 5px;
-    rotate: -45deg;
-  }
-
-}
 
